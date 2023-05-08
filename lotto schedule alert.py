@@ -52,7 +52,7 @@ def loop_get_name():
     url_now = url_lotto.format(first_round)
 
     print(url_now)
-    print("test GIThub")
+    
     print("--------------  end loop ---------------")   
 
     #response = requests.get('https://thailotto.io/member/lottery/yeekee/172', cookies=cookies, headers=headers)
