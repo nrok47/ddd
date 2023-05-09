@@ -69,7 +69,8 @@ def loop_get_name():
     for i in soup.find_all("div",{"nav-text"}):
         yee_round = i.get_text()
     #print(type(yee_round))
-    print(yee_round)
+    #print(yee_round)
+    
     #find_16 = soup.find_all("a",{"text-danger btn-scroll"})
     for i in soup.find_all("a",{"text-primary btn-scroll"}):
         find_1 = i.get_text()
