@@ -12,7 +12,9 @@ import schedule
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 import codecs
-
+import sys
+sys.getdefaultencoding()
+'utf-8'
 
 
 
@@ -54,6 +56,7 @@ def get_round_yeekee():
 
 def loop_get_name():
     global yee_round
+    
     first_round = 171
     this_round = int(get_round_yeekee())
     first_round = first_round + this_round +1
@@ -69,8 +72,8 @@ def loop_get_name():
     for i in soup.find_all("div",{"nav-text"}):
         yee_round = i.get_text()
     #print(type(yee_round))
-    #print(yee_round)
-    
+    print(yee_round)
+
     #find_16 = soup.find_all("a",{"text-danger btn-scroll"})
     for i in soup.find_all("a",{"text-primary btn-scroll"}):
         find_1 = i.get_text()
