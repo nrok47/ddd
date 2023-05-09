@@ -13,7 +13,7 @@ import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 import codecs
 
-yee_round = str("yee_round")
+
 
 
 cookies = {
@@ -53,6 +53,7 @@ def get_round_yeekee():
     return(num_round_yeekee)
 
 def loop_get_name():
+    global yee_round
     first_round = 171
     this_round = int(get_round_yeekee())
     first_round = first_round + this_round +1
