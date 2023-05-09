@@ -11,6 +11,8 @@ import requests
 import schedule
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
+import codecs
+
 yee_round = str("yee_round")
 
 cookies = {
@@ -19,7 +21,6 @@ cookies = {
     'core-session-value': '32Fq6nwbgLs2piPwdnCZNVOHND8R4aeds4XYbj8q9g8%2Bv94MfG%2F11GPAE2CqxoqH1%2BgVzEClc7dmeqi3rH8vsqTwRpd3BMe%2BM4m0WnXRiCQpbRilry6r0dVIqgEF1sOV1sEN9E%2F2v2MJcXxiYm9jB7nGjJklZj1hjc5jbtCq1kgchj2BkzxedrONxCXC2Hw%2BlilqWzQcIB11PwNDbD59H6a7OyamUD9Gtz1521HcpL8vsozl%2FZyLG8wfjWwRRooajWp2uVNI6i8xRColGneoHkQ9F5QDb7ZsuWW1waAs13N%2BP256ndBdRG0h2s9H2GnhQHu6PPHqXmB3XOEx9ihoIA%3D%3D',
     'XSRF-TOKEN': 'ZPjZEyoN-iGzITJmCUmM8V2ZyUGG99PoGGCQ',
 }
-
 headers = {
     'authority': 'thailotto.io',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -37,9 +38,9 @@ headers = {
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
 }
-
 #### get round yeekeee ############
 def get_round_yeekee():
+    
     this_date = datetime.now()
     this_date_str = this_date.strftime("%Y-%m-%d")
     first_round_str = this_date_str +" 06:03:33"
@@ -48,9 +49,6 @@ def get_round_yeekee():
     c = now_time - first_time_obj
     round_yeekee = c.total_seconds()
     num_round_yeekee = round(round_yeekee/900)
-    #if num_round_yeekee > 203:
-    #    num_round_yeekee_plus = num_round_yeekee + 6
-    
     return(num_round_yeekee)
 
 def loop_get_name():
@@ -62,20 +60,14 @@ def loop_get_name():
 
     url_lotto = 'https://thailotto.io/member/lottery/yeekee/{}'
     url_now = url_lotto.format(first_round)
-
-    print(url_now)
-    
-    print("--------------  end loop ---------------")   
-
+    print(url_now)  
     #response = requests.get('https://thailotto.io/member/lottery/yeekee/172', cookies=cookies, headers=headers)
     response = requests.get(str(url_now), cookies=cookies, headers=headers)
     soup = BeautifulSoup(response.text,'html.parser')
-
     for i in soup.find_all("div",{"nav-text"}):
         yee_round = i.get_text()
     #print(type(yee_round))
     print(yee_round)
-
     #find_16 = soup.find_all("a",{"text-danger btn-scroll"})
     for i in soup.find_all("a",{"text-primary btn-scroll"}):
         find_1 = i.get_text()
@@ -83,22 +75,15 @@ def loop_get_name():
         find_16 = i.get_text()
     for i in soup.find(href="?page=2&scrollToRow=50"):
         find_100 = i.get_text()    
-        
-    #print(find_100.strip())
 
     time.sleep(0.5)
-    #all_s = [find_1.strip(),find_16.strip(),find_100.strip()]
-    #print(all_s)
-    
+   
     find_1 = find_1.strip()
     find_16 = find_16.strip()
     find_100 = find_100.strip()
     print(" ลำดับ 1: " + find_1 + " / ลำดับ 16: " + find_16 +" / ลำดับ 100: "+ find_100)
     
-    #lst_gen12 = "sam***_j7, gra***99, jas***rice1, haw***ur, Not***nk, two***phong67, sol***on, fer***ja, Mos***PaTiPan9, Fri***hip, bas***ab"
     lst_gen12 = "alu***d,way***d,sav***k50,hac***,pon***ba07,nat***it1199,Mov***aven,bac***s,sil***n,gra***99,boo***my,sso***ss,jat***9,Hok***do,Mon***za,Nav***4X,eld***orld,win***09,xik***4,not***0,noo***789,mom***199"
-
-
     token = "GVkgMapvmyx4de0mblxgx6f3NxTSC4MFQ7vTYwH57nR"
     uri = "https://notify-api.line.me/api/notify"
     header = {"Authorization": "Bearer "+token}
