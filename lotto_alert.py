@@ -11,6 +11,7 @@ import requests
 import schedule
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
+yee_round = str("yee_round")
 
 cookies = {
     'language': '1lKSZI3TjFZkJmBSB5kx7Auewvyu46hhbwMHEuhRbRX6%2FiQEGxgTZQMH1azoIPW6',
