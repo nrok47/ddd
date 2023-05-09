@@ -49,6 +49,7 @@ def get_round_yeekee():
     num_round_yeekee = round(round_yeekee/900)
     #if num_round_yeekee > 203:
     #    num_round_yeekee_plus = num_round_yeekee + 6
+    
     return(num_round_yeekee)
 
 def loop_get_name():
@@ -100,7 +101,8 @@ def loop_get_name():
     token = "GVkgMapvmyx4de0mblxgx6f3NxTSC4MFQ7vTYwH57nR"
     uri = "https://notify-api.line.me/api/notify"
     header = {"Authorization": "Bearer "+token}
-    #msg = {"message": "  "}
+    yee_msg = datetime.today()
+    msg = {"message": yee_msg }
     #resp = requests.post(uri,headers=header,data=msg)
         
     if find_1 in lst_gen12 :
@@ -118,7 +120,7 @@ def loop_get_name():
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_100 + " :ยิงเข้า 100")
-    else : print(" หมดละ")
+    else : resp = requests.post(uri,headers=header,data=msg)
 
 
     
