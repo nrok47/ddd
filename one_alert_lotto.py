@@ -2,6 +2,7 @@ import requests
 import time
 from bs4 import BeautifulSoup
 from datetime import datetime
+import io
 
 import pandas as pd
 import json
@@ -52,6 +53,7 @@ def loop_get_name():
     #response = requests.get('https://thailotto.io/member/lottery/yeekee/172', cookies=cookies, headers=headers)
     response = requests.get(str(url_now), cookies=cookies, headers=headers)
     soup = BeautifulSoup(response.text,'html.parser')
+    soup.encode("utf-8")
 
     for i in soup.find_all("div",{"nav-text"}):
         yee_round = i.get_text()
