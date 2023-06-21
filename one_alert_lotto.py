@@ -197,18 +197,18 @@ except TimeoutOccurred:
 
 #og_sys = sys.stdout.read()
 
-filename = f"C:/xampp/htdocs/fastapi/scrap python/log_lotto/log_{datetime.now().strftime('%Y_%m_%d')}.log"
-with open(filename, "a+") as f:
+#filename = f"C:/xampp/htdocs/fastapi/scrap python/log_lotto/log_{datetime.now().strftime('%Y_%m_%d')}.log"
+#with open(filename, "a+") as f:
     #f.write(url_now)
     #all_loop = loop_get_name()
     #time_lotto = input('input: ')
     #print(type(time_lotto))
     #all_ying = "เวลายิง = " + str(time_lotto)
     #print(all_ying)
-    f.write(f"\ntime_Ying = {loop_get_name()}")
-    f.write(f"\ntime to ying = {time_ying}")
-    f.write(f"\nJob Done @{datetime.now().strftime('%Y_%m_%d_%H:%M:%S')}")
-    f.write("\n<<----------------------------------------------------->>")
+    #f.write(f"\ntime_Ying = {loop_get_name()}")
+    #f.write(f"\ntime to ying = {time_ying}")
+    #f.write(f"\nJob Done @{datetime.now().strftime('%Y_%m_%d_%H:%M:%S')}")
+    #f.write("\n<<----------------------------------------------------->>")
 
 
 ##<<<<<<<<<<<<<<<#old start of methods -----------------------------------------------------
