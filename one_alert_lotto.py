@@ -89,7 +89,7 @@ def loop_get_name():
     find_1 = find_1.strip()
     find_16 = find_16.strip()
     find_100 = find_100.strip()
-    print(" ลำดับ1: " + find_1 + " / ลำดับ16: " + find_16 +" / ลำดับ100: "+ find_100)
+    print(" No1: " + find_1 + " / No16: " + find_16 +" / No100: "+ find_100)
     
    
     
@@ -116,7 +116,7 @@ def loop_get_name():
             #z = str(find_users)
             #all_find_user.append(find_users)
             #def get_find_user():    
-            print(find_users + " ลำดับ : "  + str(y))
+            print(find_users + " Tee : "  + str(y))
             #return(find_users)
             merge_find_user = [find_users,y]
             all_find_user.append(merge_find_user)
@@ -134,25 +134,25 @@ def loop_get_name():
     #resp = requests.post(uri,headers=header,data=msg)
         
     if find_1 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_1 + " :ยิงเข้า 1"
+        yee_msg = yee_round + " => " + find_1 + " :Ying 1"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
-        print("=> " + find_1 + " :ยิงเข้า 1")
+        print("=> " + find_1 + " :Ying 1")
     if find_16 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_16 + " :ยิงเข้า 16"
+        yee_msg = yee_round + " => " + find_16 + " :Ying 16"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
-        print("=> " + find_16 + " :ยิงเข้า 16")
+        print("=> " + find_16 + " :Ying 16")
     if find_100 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_100 + " :ยิงเข้า 100"
+        yee_msg = yee_round + " => " + find_100 + " :Ying 100"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
-        print("=> " + find_100 + " :ยิงเข้า 100")
+        print("=> " + find_100 + " :Ying 100")
     else :
         yee_msg = all_find_user
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg) 
-        print("---------------หมดละ----------------------")
+        print("---------------close----------------------")
     return(find_1,find_16,find_100,all_find_user)
 
 
