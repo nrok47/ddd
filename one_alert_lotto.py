@@ -189,11 +189,11 @@ url_now = url_lotto.format(first_round)
 print(url_now)
 loop_get_name()
 
-time_ying = str("a")
-try:
-    time_ying = inputimeout(prompt='เวลายิง >>', timeout=10)
-except TimeoutOccurred:
-    time_ying = 'no input'
+#time_ying = str("a")
+#try:
+#    time_ying = inputimeout(prompt='เวลายิง >>', timeout=10)
+#except TimeoutOccurred:
+#    time_ying = 'no input'
 
 #og_sys = sys.stdout.read()
 
