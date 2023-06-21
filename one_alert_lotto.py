@@ -20,13 +20,12 @@ cookies = {
     'core-session-value': '32Fq6nwbgLs2piPwdnCZNVOHND8R4aeds4XYbj8q9g8%2Bv94MfG%2F11GPAE2CqxoqH1%2BgVzEClc7dmeqi3rH8vsqTwRpd3BMe%2BM4m0WnXRiCQpbRilry6r0dVIqgEF1sOV1sEN9E%2F2v2MJcXxiYm9jB7nGjJklZj1hjc5jbtCq1kgchj2BkzxedrONxCXC2Hw%2BlilqWzQcIB11PwNDbD59H6a7OyamUD9Gtz1521HcpL8vsozl%2FZyLG8wfjWwRRooajWp2uVNI6i8xRColGneoHkQ9F5QDb7ZsuWW1waAs13N%2BP256ndBdRG0h2s9H2GnhQHu6PPHqXmB3XOEx9ihoIA%3D%3D',
     'XSRF-TOKEN': 'ZPjZEyoN-iGzITJmCUmM8V2ZyUGG99PoGGCQ',
 }
-
+#encoode : utf-8
 headers = {
     'authority': 'thailotto.io',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'accept-language': 'en-US,en;q=0.9,th;q=0.8,ja;q=0.7',
     'cache-control': 'max-age=0',
-    # 'cookie': 'language=1lKSZI3TjFZkJmBSB5kx7Auewvyu46hhbwMHEuhRbRX6%2FiQEGxgTZQMH1azoIPW6; core-session=zz3K9Aw6rHD8S7hR2k0wDbbpgSW00Ho2J%2F%2BUKl%2F5DFVcJshB3IOIl2GosSG8jT4qvkZkwPJ9df3pVVAq8d4pYVLDnmFkwpqzjvzzNtYO5J1e2NJX8VUZ1E2t0i%2F8rfmU; core-session-value=32Fq6nwbgLs2piPwdnCZNVOHND8R4aeds4XYbj8q9g8%2Bv94MfG%2F11GPAE2CqxoqH1%2BgVzEClc7dmeqi3rH8vsqTwRpd3BMe%2BM4m0WnXRiCQpbRilry6r0dVIqgEF1sOV1sEN9E%2F2v2MJcXxiYm9jB7nGjJklZj1hjc5jbtCq1kgchj2BkzxedrONxCXC2Hw%2BlilqWzQcIB11PwNDbD59H6a7OyamUD9Gtz1521HcpL8vsozl%2FZyLG8wfjWwRRooajWp2uVNI6i8xRColGneoHkQ9F5QDb7ZsuWW1waAs13N%2BP256ndBdRG0h2s9H2GnhQHu6PPHqXmB3XOEx9ihoIA%3D%3D; XSRF-TOKEN=ZPjZEyoN-iGzITJmCUmM8V2ZyUGG99PoGGCQ',
     'referer': 'https://thailotto.io/member/lottery/yeekee',
     'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
     'sec-ch-ua-mobile': '?0',
@@ -38,7 +37,7 @@ headers = {
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
 }
-#nouse def for spilt word ##
+
 def substring_after(s, delim):
     return s.partition(delim)[2]
 
