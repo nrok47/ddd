@@ -127,7 +127,8 @@ def loop_get_name():
             #def get_find_user():    
             print(find_users + " Tee : "  + str(y))
             #return(find_users)
-            merge_find_user = [find_users,y]
+            kum_y = "อันดับ:" + str(y)  +"\n"
+            merge_find_user = [find_users,kum_y]
             all_find_user.append(merge_find_user)
             #print(y)
         #print(find_users)
@@ -143,26 +144,26 @@ def loop_get_name():
     #resp = requests.post(uri,headers=header,data=msg)
         
     if find_1 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_1 + " :Ying 1"
+        yee_msg = yee_round + " => " + find_1 + " :ยิงได้ที่ 1"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_1 + " :Ying 1")
     if find_16 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_16 + " :Ying 16"
+        yee_msg = yee_round + " => " + find_16 + " :ยิงได้ที่ 16"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_16 + " :Ying 16")
-    if True :
-        yee_msg = "--- yee kee ----- "
-        msg = {"message": yee_msg }
-        resp = requests.post(uri,headers=header,data=msg)
-        print("=> " + find_100 + " :Ying 100")
     if find_100 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_100 + " :Ying 100"
+        yee_msg = yee_round + " => " + find_100 + " :ยิงได้ที่ 100"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_100 + " :Ying 100")
-    else :
+    if True :
+        yee_msg = " ---- yee KEE ----- "
+        msg = {"message": yee_msg }
+        resp = requests.post(uri,headers=header,data=msg)
+        print("=> " + find_100 + " :Ying 100")
+    if True:
         yee_msg = all_find_user
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg) 
