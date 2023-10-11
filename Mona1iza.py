@@ -54,7 +54,7 @@ if output_day in [1,2,3,4,5,6,7,8,9]:
 result = []
 for number in numbers:
     text = number.get_text(strip=True)
-    if "สิงหาคม" in text and "2566" in text:
+    if "ตุลาคม" in text and "2566" in text:
         lines = text.splitlines()
         day = lines[0].strip()
         value = lines[3].strip().replace("2566", "")

@@ -5,6 +5,7 @@ from selenium import webdriver
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import sys
+import requests
 ####      selenium         #######
 driver = webdriver.Chrome()
 driver.get("https://thailotto.io/login")

@@ -67,6 +67,10 @@ print(cell_range)
 # Update the value in the specified cell range
 all_sum_ying = worksheet.get(cell_range)
 
+# Get the current date and time
+current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+cell_to_update = f"CT{last_row_ee}"
+worksheet.update_acell(cell_to_update, current_datetime)
 
 ## ส่ง token line
 token = "GVkgMapvmyx4de0mblxgx6f3NxTSC4MFQ7vTYwH57nR"
@@ -79,5 +83,3 @@ esp = requests.post(uri,headers=header,data=msg)
 print("  => ok " )
 
 print(all_sum_ying)
-
-
