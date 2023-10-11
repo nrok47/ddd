@@ -82,3 +82,6 @@ if total_money < 909 :
     yee_msg = " ตัว => "+ str(usernames) + " เหลือ "+ str(total_money) 
     msg = {"message": yee_msg }
     esp = requests.post(uri,headers=header,data=msg)
+
+driver.quit()
+sys.exit()
