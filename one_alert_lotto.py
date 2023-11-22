@@ -1,8 +1,9 @@
+﻿# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import requests
 import time
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime , timedelta
 import io
 
 import pandas as pd
@@ -40,6 +41,7 @@ headers = {
     'charset': 'utf-8',
 }
 
+
 def substring_after(s, delim):
     return s.partition(delim)[2]
 
@@ -54,12 +56,15 @@ def loop_get_name():
     yee_round = str("a")
     #response = requests.get('https://thailotto.io/member/lottery/yeekee/172', cookies=cookies, headers=headers)
     response = requests.get(str(url_now), cookies=cookies, headers=headers)
-    soup = BeautifulSoup(response.text,'html.parser')
-    #soup.encode("utf-8")
+    soup = BeautifulSoup(response.text,'html.parser')#from_encoding="utf-8"
+    #soup.prettify("utf-8")
 
-    for i in soup.find_all("div",{"nav-text"}):
-        yee_round = i.get_text()
-    print(yee_round)
+#    for i in soup.find_all("div",{"nav-text"}):
+#        yee_round = i.get_text()
+#    print(yee_round)
+    yee_r = soup.find("div",{"nav-text"})
+    if yee_r is not None:
+        yee_round = yee_r.get_text()
 
     find_1 = str("a")
     find_16 = str("a")
@@ -122,7 +127,8 @@ def loop_get_name():
             #def get_find_user():    
             print(find_users + " Tee : "  + str(y))
             #return(find_users)
-            merge_find_user = [find_users,y]
+            kum_y = "อันดับ:" + str(y)  +"\n"
+            merge_find_user = [find_users,kum_y]
             all_find_user.append(merge_find_user)
             #print(y)
         #print(find_users)
@@ -138,21 +144,26 @@ def loop_get_name():
     #resp = requests.post(uri,headers=header,data=msg)
         
     if find_1 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_1 + " :Ying 1"
+        yee_msg = yee_round + " => " + find_1 + " :ยิงได้ที่ 1"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_1 + " :Ying 1")
     if find_16 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_16 + " :Ying 16"
+        yee_msg = yee_round + " => " + find_16 + " :ยิงได้ที่ 16"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_16 + " :Ying 16")
     if find_100 in lst_gen12 :
-        yee_msg = yee_round + " => " + find_100 + " :Ying 100"
+        yee_msg = yee_round + " => " + find_100 + " :ยิงได้ที่ 100"
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg)
         print("=> " + find_100 + " :Ying 100")
-    else :
+    if True :
+        yee_msg = " ---- yee KEE ----- "
+        msg = {"message": yee_msg }
+        resp = requests.post(uri,headers=header,data=msg)
+        print("=> " + find_100 + " :Ying 100")
+    if True:
         yee_msg = all_find_user
         msg = {"message": yee_msg }
         resp = requests.post(uri,headers=header,data=msg) 
@@ -163,13 +174,21 @@ def loop_get_name():
 #### get round yeekeee ############
 def get_round_yeekee():
     this_date = datetime.now()
+    time_at_noon = datetime(2023,6,22,00,0,30,115421)
     this_date_str = this_date.strftime("%Y-%m-%d")
     first_round_str = this_date_str +" 06:03:33"
     first_time_obj = datetime.strptime(first_round_str,"%Y-%m-%d %H:%M:%S")
     now_time = datetime.today()
+
+    if now_time < first_time_obj:
+        first_time_obj = first_time_obj - timedelta(days=1)
+    
     c = now_time - first_time_obj
+        #print(first_time_obj)
+    #print(c)
     round_yeekee = c.total_seconds()
     num_round_yeekee = round(round_yeekee/900)
+    
     #if num_round_yeekee > 203:
     #    num_round_yeekee_plus = num_round_yeekee + 6
     #print("num" + str(num_round_yeekee))
@@ -191,6 +210,7 @@ if first_round > 203 :
 
 url_now = url_lotto.format(first_round)
 print(url_now)
+
 loop_get_name()
 
 #time_ying = str("a")
